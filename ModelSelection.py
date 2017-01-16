@@ -40,6 +40,6 @@ class ModelSelection:
             score_models.append(score_models_eachsplit)
         self.score_models_all = score_models
         self.score_models = np.mean(score_models,axis=0)
-        self.best_model = list(self.models)[np.where( np.max(self.score_models)==self.score_models )]
+        self.best_model = np.array(self.models)[np.where( np.max(self.score_models)==self.score_models )]
         self.score_std = np.std(score_models,axis=0)
         
